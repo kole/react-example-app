@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Snapshot 1`] = `
+<Provider
+  rootStore={
+    RootStoreClass {
+      "AnswersStore": answersStoreClass {
+        "RootStore": [Circular],
+      },
+      "QuestionsStore": questionsStoreClass {
+        "RootStore": [Circular],
+      },
+      "ResultsStore": resultsStoreClass {
+        "RootStore": [Circular],
+      },
+    }
+  }
+>
+  <styled.div>
+    <Routes />
+  </styled.div>
+</Provider>
+`;

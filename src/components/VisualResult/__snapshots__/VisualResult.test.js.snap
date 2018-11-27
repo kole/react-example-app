@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VisualResult Snapshot with right answer 1`] = `
+<div
+  className="sc-bdVaJa KMFfT"
+>
+  <i
+    className="material-icons right"
+  >
+    check
+  </i>
+</div>
+`;
+
+exports[`VisualResult Snapshot with wrong answer 1`] = `
+<div
+  className="sc-bdVaJa KMFfT"
+>
+  <i
+    className="material-icons wrong"
+  >
+    close
+  </i>
+</div>
+`;

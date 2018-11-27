@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewResults Snapshot 1`] = `
+<div
+  className="sc-EHOje gQKliD"
+>
+  <div
+    className="sc-bdVaJa krsHcM"
+  >
+    You scored 
+    <br />
+    0
+     / 
+    0
+  </div>
+  <div
+    className="sc-ifAKCX llzVb"
+  >
+    <ul />
+  </div>
+  <div
+    className="sc-bwzfXH dMNwrz"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Play Again?
+    </button>
+  </div>
+</div>
+`;

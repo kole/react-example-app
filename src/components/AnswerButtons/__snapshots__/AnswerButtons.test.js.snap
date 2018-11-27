@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnswerButtons Snapshot 1`] = `
+<div
+  className="sc-bwzfXH eEgkFF"
+>
+  <div
+    className="sc-bdVaJa bvgpsV"
+  >
+    <button
+      onClick={[Function]}
+    >
+      False
+    </button>
+  </div>
+  <div
+    className="sc-bdVaJa bvgpsV"
+  >
+    <button
+      onClick={[Function]}
+    >
+      True
+    </button>
+  </div>
+</div>
+`;

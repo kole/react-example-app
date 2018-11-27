@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`H2 Snapshot 1`] = `
+<div
+  className="sc-bdVaJa QUlyn"
+>
+  H2 Component Test
+</div>
+`;

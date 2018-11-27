@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewIntro Snapshot 1`] = `
+<div
+  className="sc-bxivhb fmvafS"
+>
+  <div
+    className="sc-bdVaJa iSJzkt"
+  >
+    Welcome to the Trivia Challenge
+  </div>
+  <div
+    className="sc-bwzfXH dSwnPu"
+  >
+    You will be presented with 10 True or False questions.
+  </div>
+  <div
+    className="sc-bwzfXH dSwnPu"
+  >
+    Can you score 100%?
+  </div>
+  <div
+    className="sc-htpNat gYNKdz"
+  >
+    <button
+      onClick={[Function]}
+    >
+      Begin
+    </button>
+  </div>
+</div>
+`;

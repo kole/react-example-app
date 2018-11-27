@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuestionBox Snapshot 1`] = `
+<div
+  className="sc-bwzfXH eVoLQX"
+>
+  <div
+    className="sc-bdVaJa UhWAf"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "Test question box",
+      }
+    }
+  />
+</div>
+`;

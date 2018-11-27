@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`YourScore Snapshot 1`] = `
+<div
+  className="sc-bdVaJa krsHcM"
+>
+  You scored 
+  <br />
+  5
+   / 
+  10
+</div>
+`;

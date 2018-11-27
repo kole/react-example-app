@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsList Snapshot for correct answer 1`] = `
+<div
+  className="sc-htpNat hRzFNt"
+>
+  <ul>
+    <li>
+      <div
+        className="sc-bwzfXH GTHTj"
+      >
+        <i
+          className="material-icons right"
+        >
+          check
+        </i>
+      </div>
+      <div
+        className="sc-bdVaJa UhWAf"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Sample correct question for test",
+          }
+        }
+      />
+    </li>
+    <li>
+      <div
+        className="sc-bwzfXH GTHTj"
+      >
+        <i
+          className="material-icons wrong"
+        >
+          close
+        </i>
+      </div>
+      <div
+        className="sc-bdVaJa UhWAf"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Sample incorrect question for test",
+          }
+        }
+      />
+    </li>
+  </ul>
+</div>
+`;
