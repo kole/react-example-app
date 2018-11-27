@@ -71,4 +71,4 @@ A list of some of the non-obvious dependencies and why they were used
 
 ## Tested Browsers
 
--   Chrome 67 (macOS 10.13.4)
+-   Chrome 70 (macOS 10.13.4)
