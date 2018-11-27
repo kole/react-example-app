@@ -1,15 +1,7 @@
 /* eslint-env jest */
 import RootStore from '~/stores/RootStore';
-import axios from 'axios';
 
 describe("Questions Store", () => {
-    it('gets new questions from API', () => {
-        const store = new RootStore();
-        const spy = jest.spyOn(axios, 'get');
-        store.QuestionsStore.getNewQuestions();
-        expect(spy).toHaveBeenCalled();
-    });
-
     it('sets the fetching flag', () => {
         const store = new RootStore();
         expect(store.QuestionsStore.fetching).toBeFalsy();
