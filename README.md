@@ -69,6 +69,6 @@ A list of some of the non-obvious dependencies and why they were used
 -   `transform-class-properties` and `transform-decorators-legacy` are for using Mobx decorators
 -   `root-import` to avoid long relative paths and guard against project structure changes breaking the app (e.g. `../../../`)
 
-## Tested Browsers
+## Tested Browsers & OS
 
--   Chrome 70 (macOS 10.13.4)
+-   Chrome 70 (macOS 10.14.1)
