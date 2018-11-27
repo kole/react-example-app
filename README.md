@@ -1,4 +1,4 @@
-# React Code Sample
+# React Example App (with Mobx)
 
 ## Purpose
 
