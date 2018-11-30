@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { inject, observer } from 'mobx-react';
 
+import Spinner from '~/components/Spinner';
 import Category from '~/components/Category';
 import QuestionBox from '~/components/QuestionBox';
 import QuizProgress from '~/components/QuizProgress';
 import AnswerButtons from '~/components/AnswerButtons';
-import Spinner from '~/components/Spinner';
+
+import { fetchQuestions } from '~/actions/questions';
 
 const QuestionsView = styled.div`
     display: flex;
@@ -23,33 +25,33 @@ const QuestionsView = styled.div`
     }
 `;
 
-@inject('rootStore')
-@observer
-export default class Questions extends React.Component {
+class Questions extends React.Component {
     componentDidMount() {
-        const { rootStore: { QuestionsStore: { fetching, questions }}, history } = this.props;
+        const { loading, questions, dispatch } = this.props;
+        dispatch(fetchQuestions());
 
         // If we are not fetching and we also don't have questions in the array,
         // send user back to Intro screen - there is a problem
-        if (!fetching && questions.length === 0) {
+        if (!loading && questions.length === 0) {
             return history.push('/');
         }
     }
 
     getCurrentQuestionByNumber(num) {
         if (typeof num !== 'number') return;
-        const { rootStore: { QuestionsStore: { questions, getQuestionAtIndex }}} = this.props;
-        const idx = num - 1;
-        if (questions.length === 0 || questions.length === idx) return;
-        return getQuestionAtIndex(idx);
+        // const { rootStore: { QuestionsStore: { questions, getQuestionAtIndex }}} = this.props;
+        // const idx = num - 1;
+        // if (questions.length === 0 || questions.length === idx) return;
+        // return getQuestionAtIndex(idx);
+        return 1;
     }
 
     render() {
-        const { rootStore: { QuestionsStore: { fetching, questions }}, match, history} = this.props;
+        const { loading, questions, match, history} = this.props;
         const currentPageNumber = parseInt(match.params.num, 10);
         const question = this.getCurrentQuestionByNumber(currentPageNumber);
 
-        if (fetching || !question) return <Spinner />;
+        if (loading || !question) return <Spinner />;
 
         return (
             <QuestionsView>
@@ -63,7 +65,18 @@ export default class Questions extends React.Component {
 }
 
 Questions.propTypes = {
-    rootStore: PropTypes.object,
+    dispatch: PropTypes.func.isRequired,
     match: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
+    questions: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired,
+    error: PropTypes.object
 }
+
+const mapStateToProps = state => ({
+    questions: state.questions.items,
+    loading: state.questions.loading,
+    error: state.questions.error
+});
+
+export default connect(mapStateToProps)(Questions);

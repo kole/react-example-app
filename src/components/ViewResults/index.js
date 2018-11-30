@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { inject, observer } from 'mobx-react';
 
-import YourScore from '~/components/YourScore';
 import Button from '~/components/Button';
+import YourScore from '~/components/YourScore';
 import ResultsList from '~/components/ResultsList';
 
 const ResultsView = styled.div`
@@ -22,8 +21,6 @@ const ResultsView = styled.div`
     }
 `;
 
-@inject('rootStore')
-@observer
 export default class Results extends React.Component {
     componentDidMount() {
         const { rootStore: { QuestionsStore: { questions }, AnswersStore: { answers }}, history} = this.props;

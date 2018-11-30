@@ -1,9 +1,8 @@
 {
-  "presets": ["env", "react", "stage-0"],
-  "plugins": [
-      ["babel-plugin-root-import", { "rootPathSuffix": "src" }],
-      "transform-decorators-legacy",
-      "transform-class-properties",
-      "transform-es2015-classes"
-  ]
+    "presets": ["@babel/preset-env", "@babel/preset-react"],
+    "plugins": [
+        ["babel-plugin-root-import", {
+            "rootPathSuffix": "src"
+        }]
+    ]
 }

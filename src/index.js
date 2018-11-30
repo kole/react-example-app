@@ -1,10 +1,17 @@
 import "babel-polyfill";
 
 import React from 'react';
+import thunk from 'redux-thunk';
 import { render } from 'react-dom';
-import { injectGlobal } from 'styled-components';
+import { Provider } from 'react-redux';
+import { createGlobalStyle } from 'styled-components';
+import { createStore, applyMiddleware } from 'redux';
 
-injectGlobal`
+import rootReducer from './reducers';
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
+const GlobalStyle = createGlobalStyle`
     @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
     @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
@@ -27,4 +34,10 @@ injectGlobal`
 
 import App from './components/App';
 
-render(<App />, document.getElementById('app'));
+render(
+    <Provider store={store}>
+        <GlobalStyle />
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);

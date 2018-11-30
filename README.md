@@ -66,7 +66,6 @@ If this app were an actual production app, the following changes would be consid
 
 A list of some of the non-obvious dependencies and why they were used
 
--   `transform-class-properties` and `transform-decorators-legacy` are for using Mobx decorators
 -   `root-import` to avoid long relative paths and guard against project structure changes breaking the app (e.g. `../../../`)
 
 ## Tested Browsers & OS

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { inject } from 'mobx-react';
 import styled from 'styled-components';
 
 import Button from '~/components/Button';
@@ -18,7 +17,6 @@ const AnswerButtonsContainer = styled.div`
     }
 `;
 
-@inject('rootStore')
 export default class Buttons extends React.Component {
     navigateToNextQuestion() {
         const { history, questionID: currentPageNumber } = this.props;
