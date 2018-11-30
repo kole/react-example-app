@@ -1,15 +1,8 @@
 import "babel-polyfill";
 
 import React from 'react';
-import thunk from 'redux-thunk';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
-import { createStore, applyMiddleware } from 'redux';
-
-import rootReducer from './reducers';
-
-const store = createStore(rootReducer, applyMiddleware(thunk))
 
 const GlobalStyle = createGlobalStyle`
     @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
@@ -35,9 +28,9 @@ const GlobalStyle = createGlobalStyle`
 import App from './components/App';
 
 render(
-    <Provider store={store}>
+    <React.Fragment>
         <GlobalStyle />
         <App />
-    </Provider>,
-    document.getElementById('root')
+    </React.Fragment>,
+    document.getElementById('app')
 );

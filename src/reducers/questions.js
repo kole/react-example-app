@@ -6,7 +6,7 @@ import {
 
   const initialState = {
     questions: [],
-    loading: false,
+    fetching: false,
     error: null
   };
 
@@ -15,21 +15,21 @@ import {
       case FETCH_QUESTIONS_BEGIN:
         return {
           ...state,
-          loading: true,
+          fetching: true,
           error: null
         };
 
       case FETCH_QUESTIONS_SUCCESS:
         return {
           ...state,
-          loading: false,
+          fetching: false,
           questions: action.payload.questions
         };
 
       case FETCH_QUESTIONS_ERROR:
         return {
           ...state,
-          loading: false,
+          fetching: false,
           error: action.payload.error,
           questions: []
         };

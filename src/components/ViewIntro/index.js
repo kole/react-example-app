@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from 'react-redux';
 import styled from "styled-components";
 
 import H1 from "~/components/H1";
 import H2 from "~/components/H2";
 import Button from "~/components/Button";
+import { fetchQuestions } from '~/actions/questions';
 
 const IntroContainer = styled.div`
     display: flex;
@@ -22,15 +24,12 @@ const IntroContainer = styled.div`
     }
 `;
 
-export default class Intro extends React.Component {
+class Intro extends React.Component {
     handleClick() {
-        const {
-            history,
-            rootStore: { QuestionsStore }
-        } = this.props;
+        const { history, dispatch } = this.props;
 
         // User has requested to begin quiz, get questions
-        QuestionsStore.getNewQuestions();
+        dispatch(fetchQuestions());
 
         // go to the first question URL
         history.push("/question/1");
@@ -52,6 +51,14 @@ export default class Intro extends React.Component {
 }
 
 Intro.propTypes = {
-    rootStore: PropTypes.object,
+    dispatch: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired
 };
+
+const mapStateToProps = state => ({
+    questions: state.questions.items,
+    fetching: state.questions.fetching,
+    error: state.questions.error
+});
+
+export default connect(mapStateToProps)(Intro);

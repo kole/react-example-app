@@ -19,23 +19,16 @@ export const fetchQuestionsError = error => ({
 });
 
 export function fetchQuestions() {
+    const url = encodeURI(`${URL.questionsAPI}?amount=${10}&difficulty=hard&type=boolean`);
     return dispatch => {
         dispatch(fetchQuestionsBegin());
-        return fetch(URL)
-            .then(handleErrors)
+        return fetch(url)
             .then(res => res.json())
-            .then(json => {
-                dispatch(fetchQuestionsSuccess(json.questions));
-                return json.questions;
+            .then(data => {
+                const { results } = data;
+                dispatch(fetchQuestionsSuccess(results));
+                return results;
             })
             .catch(error => dispatch(fetchQuestionsError(error)));
     };
-}
-
-// Necessary error handler because fetch doesn't fail nicely with HTTP errors
-function handleErrors(response) {
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-    return response;
 }
