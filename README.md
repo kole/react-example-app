@@ -1,4 +1,4 @@
-# React Example App (with Mobx)
+# React Example App (with Redux + Reselect)
 
 ## Purpose
 
@@ -29,9 +29,9 @@ All components for this app are located at the root level of the `/components` d
 
 The `/constants` directory stores the API URL.
 
-### Stores
+### State
 
-All 3 Mobx stores (answers, questions, results) are located in `/stores`. The `RootStore` file imports, instantiates and then exports all stores as a best practice to ensure the store is a singleton throughout the app.
+There are 2 primary pieces of states: questions and answers. State is managed with Redux and respoinsiblities are split between actions and reducers. Additionally, derived state (via reselect), leveraging memoized selectors, is used to calculate the results of the quiz once the user reaches the end.
 
 ### Tests
 
@@ -47,9 +47,9 @@ There are some intentional inconsistencies in this codebase. For example, one mi
 
 An effort was made to write clear, yet concise, variable, function/method and class names. I added comments to areas where I felt additional explanation could be helpful.
 
-## Mobx Instead of Redux
+## Redux for State Management
 
-It is my personal preference to operate under the OOP paradigm. Mobx embraces OOP whereas Redux forces engineers into using FP. Sometimes that can be a good thing (perhaps on very large projects with many developers where 100% test coverage is a requirement and speed of development is not a priority), but it is my experience that the benefits of using Redux do not outweigh the extra time and effort spent in writing copious amounts of boilerplate code for simple transactions.
+An application this size does not need a 3rd party state manager. Desired results can be achieved much more elegantly using react state, the context API, or even by simply passing props down to child components. However, since this app is designed to showcase best practices for larger applications, I chose Redux since it scales well. Additionally, I decided to use a memoized selector to demonstrate best practice for performance by caching expensive processes like loops and comparisons.
 
 ## Production Considerations
 
