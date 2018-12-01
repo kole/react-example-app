@@ -55,10 +55,6 @@ Intro.propTypes = {
     history: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-    questions: state.questions.items,
-    fetching: state.questions.fetching,
-    error: state.questions.error
-});
+const mapStateToProps = () => ({});
 
-export default connect(mapStateToProps)(Intro);
+export default connect(mapStateToProps)(Intro)

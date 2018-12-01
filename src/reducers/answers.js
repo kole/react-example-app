@@ -1,5 +1,6 @@
 import {
-    RECORD_ANSWER
+    RECORD_ANSWER,
+    RESET_ANSWERS
   } from '../actions/answers';
 
   const initialState = {
@@ -13,6 +14,12 @@ import {
             ...state,
             answers: [...state.answers, action.payload]
         };
+
+      case RESET_ANSWERS:
+        return {
+            ...state,
+            answers: initialState.answers
+        }
 
       default:
         return state;
