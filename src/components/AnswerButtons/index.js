@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import Button from '~/components/Button';
+import { recordAnswer } from '~/actions/answers';
 
 const AnswerButtonsContainer = styled.div`
     align-items: center;
@@ -17,20 +19,19 @@ const AnswerButtonsContainer = styled.div`
     }
 `;
 
-export default class Buttons extends React.Component {
+class Buttons extends React.Component {
     navigateToNextQuestion() {
-        const { history, questionID: currentPageNumber } = this.props;
-        const { rootStore: { QuestionsStore: { questions }}} = this.props;
+        const { history, questionID: currentPageNumber, questions } = this.props;
 
-        if (currentPageNumber >= questions.length) {
+        if (currentPageNumber >= questions.questions.length) {
             return history.push('/results');
         }
         return history.push(`/question/${parseInt(currentPageNumber + 1, 10)}`);
     }
 
     recordAnswerOnClick(id, answer) {
-        const { rootStore: { AnswersStore: { recordAnswer }}} = this.props;
-        recordAnswer({ id, answer });
+        const { dispatch } = this.props;
+        dispatch(recordAnswer({ id, answer }));
         this.navigateToNextQuestion();
     }
 
@@ -46,7 +47,15 @@ export default class Buttons extends React.Component {
 }
 
 Buttons.propTypes = {
-    rootStore: PropTypes.object,
+    dispatch: PropTypes.func.isRequired,
     questionID: PropTypes.number.isRequired,
-    history: PropTypes.object.isRequired
+    history: PropTypes.object.isRequired,
+    questions: PropTypes.object.isRequired
 }
+
+const mapStateToProps = state => ({
+    answers: state.answers,
+    questions: state.questions
+});
+
+export default connect(mapStateToProps)(Buttons)

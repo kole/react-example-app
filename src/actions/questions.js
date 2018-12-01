@@ -18,8 +18,9 @@ export const fetchQuestionsError = error => ({
     payload: { error }
 });
 
-export function fetchQuestions() {
-    const url = encodeURI(`${URL.questionsAPI}?amount=${10}&difficulty=hard&type=boolean`);
+export function fetchQuestions(amount=10, difficulty='hard', type='boolean') {
+    const url = encodeURI(`${URL.questionsAPI}?amount=${amount}&difficulty=${difficulty}&type=${type}`);
+
     return dispatch => {
         dispatch(fetchQuestionsBegin());
         return fetch(url)
