@@ -2,22 +2,18 @@
 
 exports[`App Snapshot 1`] = `
 <Provider
-  rootStore={
-    RootStoreClass {
-      "AnswersStore": answersStoreClass {
-        "RootStore": [Circular],
-      },
-      "QuestionsStore": questionsStoreClass {
-        "RootStore": [Circular],
-      },
-      "ResultsStore": resultsStoreClass {
-        "RootStore": [Circular],
-      },
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
     }
   }
 >
-  <styled.div>
+  <ForwardRef>
     <Routes />
-  </styled.div>
+  </ForwardRef>
 </Provider>
 `;
