@@ -5,7 +5,7 @@ exports[`ViewResults Snapshot 1`] = `
   className="sc-EHOje gQKliD"
 >
   <div
-    className="sc-bdVaJa krsHcM"
+    className="sc-bwzfXH ccQpDx"
   >
     You scored 
     <br />
@@ -19,7 +19,7 @@ exports[`ViewResults Snapshot 1`] = `
     <ul />
   </div>
   <div
-    className="sc-bwzfXH dMNwrz"
+    className="sc-bdVaJa bvgpsV"
   >
     <button
       onClick={[Function]}
