@@ -1,6 +1,6 @@
 # React Example App (with Mobx)
 
-NOTE: For a redux version of this app, switch to the (`redux`)[https://github.com/kole/react-example-app/tree/redux] branch.
+NOTE: For a redux version of this app, switch to the [`redux`](https://github.com/kole/react-example-app/tree/redux) branch.
 
 ## Purpose
 
