@@ -1,5 +1,7 @@
 # React Example App (with Mobx)
 
+NOTE: For a Redux version of this app, switch to the `redux` branch.
+
 ## Purpose
 
 This is a small quiz application, built in react, that consumes questions from an external API, tests its users and displays the results. It should be noted that this app, although small, is built with the idea that it should be scalable. Considerations for optimizing the app based on the existence of real-world requirements are discussed below.
