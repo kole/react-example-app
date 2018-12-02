@@ -1,5 +1,7 @@
 import { createSelector } from 'reselect';
 
+import correctAnswerCount from '~/utils/correctAnswerCount';
+
 const getCorrectAnswers = (state) => {
     return state.questions.questions.map(q => q.correct_answer);
 };
@@ -10,16 +12,7 @@ const getUserAnswers = (state) => {
 
 const calculateResults = createSelector(
     [getCorrectAnswers, getUserAnswers],
-    (correctAnswers, userAnswers) => {
-        let count = 0;
-        correctAnswers.map((answer, idx) => {
-            // normalize answers since there are strings and bools
-            const correctAnswer = answer.toString().toLowerCase();
-            const givenAnswer = userAnswers[idx].toString().toLowerCase();
-            if(correctAnswer === givenAnswer) count++
-        })
-        return count;
-    }
+    (correctAnswers, userAnswers) => correctAnswerCount(correctAnswers, userAnswers)
 );
 
 export default calculateResults;
