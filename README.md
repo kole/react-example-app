@@ -31,7 +31,7 @@ The `/constants` directory stores the API URL.
 
 ### State
 
-There are 2 primary pieces of states: questions and answers. State is managed with Redux and respoinsiblities are split between actions and reducers. Additionally, derived state (via reselect), leveraging memoized selectors, is used to calculate the results of the quiz once the user reaches the end.
+There are 2 primary pieces of state: questions and answers. State is managed with Redux and functionality is split between actions and reducers. Additionally, derived state (via reselect), leveraging memoized selectors, is used to calculate the results of the quiz once the user reaches the end.
 
 ### Tests
 
@@ -58,7 +58,7 @@ If this app were an actual production app, the following changes would be consid
 -   Error handling - There is currently no error handling in the app. This would be a required change for a production release.
 -   How necessary is a state manager like Mobx/Redux? It could be argued that simply using react state (in conjunction with `context` as of React 16.3) would be sufficient considering the simplicity and size of this app.
 -   Extensive browser/OS/device testing would be necessary.
--   There are some improvements that could be made to make the app more scalable. For example, right now, although the questions store accepts a `type` argument for fetching questions from the API, the UI only supports boolean answers to each question.
+-   There are some improvements that could be made to make the app more scalable. For example, right now, although the `fetchQuestions` action function accepts a `type` argument for fetching questions from the API, the UI only supports boolean answers to each question.
 -   A more comprehensive eslint rule-set and agreed-upon coding practices (e.g. use `arr.forEach` instead of an ES5 `for` loop, when to return an array instead of mutate an array, etc.).
 -   100% test coverage - or at least approaching 100% - should be a target.
 
